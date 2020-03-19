@@ -7,9 +7,9 @@ export default function App() {
 
     const theme = {
         prim: '#464646',
-        second: '#151515',
+        second: '#323232',
         font: '#CACACA',
-        secondTrans: 'rgba(21, 21, 21, 0.5)',
+        secondTrans: 'rgba(50, 50, 50, 0.5)',
         center: () => (`
             display: flex;
             justify-content: center;
@@ -22,7 +22,7 @@ export default function App() {
     }
 
     return (
-        <SymbolProvider>
+        <SymbolProvider value={'AAPL'}>
             <ThemeProvider theme={theme}>
                 <Layout />
             </ThemeProvider>

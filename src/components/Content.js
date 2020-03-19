@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import Chart from './data/Chart'
+import SymbolContext from '../SymbolContext'
 
 export default function Content() {
+
+    //testing purposes....
+    const { sym, setSym } = useContext(SymbolContext)
+    const click = () => {
+        setSym('AAPL')
+    }
+
     return (
         <Container>
 
             <Wrapper className='upper'>
                 <ProfileWr className='profile'>
-
                 </ProfileWr>
                 <ChartsWr className='charts'>
-
+                    <Chart />
                 </ChartsWr>
             </Wrapper>
 
@@ -73,10 +81,10 @@ const Wrapper = styled.div`
   &.upper {
       height: 45%;
   }
-
+/* 
   div {
       background-color: ${({ theme }) => theme.font};
-  }
+  } */
 
   @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
       
@@ -119,14 +127,17 @@ const Wrapper = styled.div`
 const ProfileWr = styled.div`
   height: 100%;
   width: 35%;
+  background-color: ${({ theme }) => theme.secondTrans};
 `
 
 const ChartsWr = styled.div`
   height: 100%;
   width: 60%;
+  background-color: ${({ theme }) => theme.prim};
 `
 
 const NewsWr = styled(ChartsWr)`
+  background-color: ${({ theme }) => theme.secondTrans};
 `
 
 const TrendsWr = styled(ProfileWr)` 

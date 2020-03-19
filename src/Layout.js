@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Content from './components/Content'
+import Navbar from './components/Nav/Navbar'
 
 export default function Layout() {
     return (
         <>
-            <NavWr></NavWr>
+            <NavWr>
+                <Navbar />
+            </NavWr>
             <Container>
                 <Content />
             </Container>
