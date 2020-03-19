@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { SymbolProvider } from './SymbolContext'
+import { ThemeProvider } from 'styled-components'
+import Layout from './Layout'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+    const theme = {
+        prim: '#464646',
+        second: '#151515',
+        font: '#CACACA',
+        secondTrans: 'rgba(21, 21, 21, 0.5)',
+        center: () => (`
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        `),
+        fitContainer: () => (`
+            height: 100%;
+            width: 100%;
+        `)
+    }
+
+    return (
+        <SymbolProvider>
+            <ThemeProvider theme={theme}>
+                <Layout />
+            </ThemeProvider>
+        </SymbolProvider>
+    )
 }
-
-export default App;
