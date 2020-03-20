@@ -24,7 +24,6 @@ export default class Chart extends Component {
     //for retrieving data from the API => before data fully retrieved, set isloading to true
     getAndConsumeData = () => {
 
-        console.log('getand consume')
         this.setState(prev => {
             let temp = prev
             temp.isLoading = true

@@ -118,8 +118,8 @@ const Container = styled.div`
   @media only screen and ( max-width: 1050px ) and ( min-width: 464px ) and ( min-height: 1200px ) and ( orientation: portrait ) {
 
     div:first-child {
-        height: 150px;
-        width: 150px;
+        height: 120px;
+        width: 120px;
       }
 
     & {
@@ -185,6 +185,18 @@ const Container = styled.div`
 
     div h5 {
       font-size: 0.5em;
+    }
+  }
+
+  @media only screen and ( min-width: 1920px ) {
+
+    div:first-child {
+      height: 145px;
+      width: 145px;
+    }
+
+    div:nth-child(2) {
+      height: 145px;
     }
   }
 `

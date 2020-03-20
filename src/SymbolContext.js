@@ -5,11 +5,15 @@ const SymbolContext = React.createContext()
 class SymbolProvider extends Component {
 
     state = {
-        sym: 'AAPL'
+        sym: ''
     }
 
     setSym = sym => {
-        this.setState(prev => ({ sym: sym }))
+        this.setState(prev => {
+            let temp = prev
+            temp.sym = sym
+            return temp
+        })
     }
 
     render() {

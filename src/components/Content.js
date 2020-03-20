@@ -4,13 +4,18 @@ import Chart from './data/Chart'
 import Trends from './data/Trends'
 import Profile from './data/Profile'
 import Quote from './data/Quote'
+import News from './data/News'
 import SymbolContext from '../SymbolContext'
+import Loading from './misc/Loading'
+import Error from './misc/Error'
+import { ReactComponent as Back } from './back.svg'
 
 export default class Content extends Component {
     static contextType = SymbolContext
 
     state = {
         doneLoading: [ false, false, false ],
+        dataAvailable: [ true, true, true ],
         sym: this.context.sym
     }
 
@@ -18,11 +23,16 @@ export default class Content extends Component {
         this.context.setSym(sym)
     }
 
+    clickBack = () => {
+        this.context.setSym('')
+    }
+
     fire = index => {
         console.log('firing')
         this.setState(prev => {
             let temp = prev
             temp.doneLoading[index] = true
+            temp.dataAvailable[index] = true
             return temp
         })
     }
@@ -30,9 +40,20 @@ export default class Content extends Component {
     reject = i => {
         this.setState(prev => {
             let temp = prev
-            temp.doneLoading[i] = false
+            temp.doneLoading[i] = true
+            temp.dataAvailable[i] = false
             return temp
         })
+    }
+
+    countLoad = () => {
+        let count = 0
+
+        this.state.doneLoading.forEach(x => {
+            if (x) count++
+        })
+
+        return count
     }
     
     componentDidUpdate = () => {
@@ -47,14 +68,28 @@ export default class Content extends Component {
     }
 
     render() {
-        console.table(this.state)
+        const isReady = this.countLoad() > 1 ? true : false
+        const notAvailable = this.state.dataAvailable.some(x => !x)
+        const noScroll = !isReady || notAvailable
+
+        const screen = window.matchMedia('( max-width: 850px )')
+
+        if (screen) {
+            document.body.style.overflowY = noScroll ? 'hidden' : 'scroll'
+        }
+        
+
         return (
-            <Container>
+            <Container noScroll={!isReady || notAvailable}>
+
+                {!isReady && <Loading />}
+                {notAvailable && <Error />}
+                {isReady && !notAvailable ? <Back id='back' onClick={this.clickBack} /> : <></>}
 
                 <Wrapper className='upper'>
                     <ProfileWr doneLoading={this.state.doneLoading[0]} className='profile'>
                         <Profile reject={this.reject} fire={this.fire} index={0} />
-                        {this.state.doneLoading[0] && <Quote />}
+                        {this.state.doneLoading[0] && isReady ? <Quote /> : <></>}
                     </ProfileWr>
                     <ChartsWr reject={this.reject} fire={this.fire} index={1} className='charts'>
                         <Chart />
@@ -62,7 +97,9 @@ export default class Content extends Component {
                 </Wrapper>
 
                 <Wrapper>
-                    <NewsWr className='news'></NewsWr>
+                    <NewsWr className='news'>
+                        {isReady && !notAvailable ? <News /> : <></>}
+                    </NewsWr>
                     <TrendsWr className='trends'>
                         <Trends reject={this.reject} fire={this.fire} index={2} />
                     </TrendsWr>
@@ -81,12 +118,25 @@ const Container = styled.div`
   flex-direction: column;
   padding: 3em;
   background-color: ${({ theme }) => theme.prim};
+  position: relative;
+
+  #back {
+      position: absolute;
+      top: 3vh;
+      left: 3vh;
+      fill: #fff;
+      transform: scale(1.5);
+  }
+
+  #back:hover {
+      fill: ${({ theme }) => theme.font};
+  }
   
   /* mobile */
   @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
       
       & {
-          height: 200%;
+          height: ${props => props.noScroll ? '100%' : '200%'};
           padding: 0;
       }
 
@@ -98,7 +148,7 @@ const Container = styled.div`
   @media only screen and ( max-width: 850px ) and ( orientation: landscape ) {
 
       & {
-          height: 200%;
+        height: ${props => props.noScroll ? '100%' : '200%'};
       }
   }
 

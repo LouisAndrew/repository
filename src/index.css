@@ -9,7 +9,13 @@
  body {
   font-family: 'Red Hat Text', sans-serif;
   font-size: 1em;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
  }
+
+ body::-webkit-scrollbar {
+  display: none;
+}
 
  /* div {
    border: 1px solid white;

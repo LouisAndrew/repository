@@ -1,13 +1,7 @@
 import React from 'react'
-import { PieChart, Pie, ResponsiveContainer, Legend, Tooltip } from 'recharts'
+import { PieChart, Cell, Pie, ResponsiveContainer, Legend, Tooltip } from 'recharts'
 
 export default function TrendDisp(props) {
-
-    const hover = e => {
-        console.log(e)
-        console.log('hover')
-        e.outerRadius += 10
-    }
     
     const data = [
                     {
@@ -49,13 +43,13 @@ export default function TrendDisp(props) {
         ...wrapping
     }
 
+
     return (
         <ResponsiveContainer width='100%' height='100%'>
             <PieChart>
-                <Pie onMouseEnter={hover} stroke='#' innerRadius='50%' outerRadius='70%' data={data} dataKey='val' nameKey='type' />
-                <Tooltip itemStyle={{color: '#fff'}} contentStyle={{backgroundColor: 'rgba(0, 0, 0, 0.4)', borderRadius: '15px', color: '#fff'}} />
+                <Pie stroke='#' innerRadius={horizontal ? '40%' : '50%'} outerRadius={horizontal ? '60%' : '70%'} data={data} dataKey='val' nameKey='type' />
+                <Tooltip itemStyle={{color: '#fff'}} contentStyle={{backgroundColor: 'rgba(0, 0, 0, 0.4)', borderRadius: '15px', color: '#fff', border: 'none'}} />
                 {horizontal ? <Legend wrapperStyle={wrapperStyle} align='right' verticalAlign='middle' layout='vertical' /> : <Legend wrapperStyle={wrapperStyle} align='center' verticalAlign='bottom' layout='vertical' />}
-                {/* <Legend wrapperStyle={{color: '#fff'}} align='right' verticalAlign='middle' layout='vertical' /> */}
             </PieChart>
         </ResponsiveContainer>
     )

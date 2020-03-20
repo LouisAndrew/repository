@@ -3,21 +3,20 @@ import styled from 'styled-components'
 
 export default function QuoteDisp(props) {
     // const time = new Date(props.data.t * 1000)
-    console.log(props)
     const up = props.data.pc < props.data.c ? true: false
     const prog = props.data.c / props.data.pc
     return (
       <Container>
         <Tick>
           <div><h5>High</h5></div>
-          <div><h5>{props.data.h}</h5></div>
+          <div><h5>{props.data.h.toFixed(2)}</h5></div>
         </Tick>
         <Tick>
           <div><h5>Low</h5></div>
-          <div><h5>{props.data.l}</h5></div>
+          <div><h5>{props.data.l.toFixed(2)}</h5></div>
         </Tick>
         <Prog isUp={up}>
-          <h2><span class="material-icons">arrow_upward</span>{prog.toFixed(2)}%</h2>
+          <h2><span className="material-icons">arrow_upward</span>{prog.toFixed(2)}%</h2>
         </Prog>
       </Container>
     )
