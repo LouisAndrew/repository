@@ -36,8 +36,8 @@ const Form = styled.form`
 
   #search-icon {
       fill: ${({ theme }) => theme.font};
-      height: 4vh;
-      width: 4vh;
+      height: 3vh;
+      width: 3vh;
       position: absolute;
       right: 0;
       transition: 0.5s;
@@ -73,11 +73,6 @@ const Form = styled.form`
 
     input {
         font-size: 0.9em;
-    }
-
-    #search-icon {
-        height: 3vh;
-        width: 3vh;
     }
   }
 `

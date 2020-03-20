@@ -1,34 +1,75 @@
-import React, { useContext } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import Chart from './data/Chart'
+import Profile from './data/Profile'
+import Quote from './data/Quote'
 import SymbolContext from '../SymbolContext'
 
-export default function Content() {
+export default class Content extends Component {
+    static contextType = SymbolContext
 
-    //testing purposes....
-    const { sym, setSym } = useContext(SymbolContext)
-    const click = () => {
-        setSym('AAPL')
+    state = {
+        doneLoading: [ false, false, false ],
+        sym: this.context.sym
     }
 
-    return (
-        <Container>
+    click = sym => {
+        this.context.setSym(sym)
+    }
 
-            <Wrapper className='upper'>
-                <ProfileWr className='profile'>
-                </ProfileWr>
-                <ChartsWr className='charts'>
-                    <Chart />
-                </ChartsWr>
-            </Wrapper>
+    fire = index => {
+        console.log('firing')
+        this.setState(prev => {
+            let temp = prev
+            temp.doneLoading[index] = true
+            return temp
+        })
+    }
 
-            <Wrapper>
-                <NewsWr className='news'></NewsWr>
-                <TrendsWr className='trends'></TrendsWr>
-            </Wrapper>
-        </Container>
-    )
+    reject = i => {
+        this.setState(prev => {
+            let temp = prev
+            temp.doneLoading[i] = false
+            return temp
+        })
+    }
+    
+    componentDidUpdate = () => {
+        if (this.context.sym !== this.state.sym) {
+            this.setState(prev => {
+                let temp = prev
+                temp.doneLoading = [ false, false, false ]
+                temp.sym = this.context.sym
+                return temp
+            })
+        }
+    }
+
+    render() {
+        console.table(this.state)
+        return (
+            <Container>
+
+                <Wrapper className='upper'>
+                    <ProfileWr className='profile'>
+                        <Profile fire={this.fire} index={0} />
+                        {this.state.doneLoading[0] && <Quote />}
+                    </ProfileWr>
+                    <ChartsWr fire={this.fire} index={1} className='charts'>
+                        <Chart />
+                    </ChartsWr>
+                </Wrapper>
+
+                <Wrapper>
+                    <NewsWr className='news'></NewsWr>
+                    <TrendsWr className='trends'></TrendsWr>
+                </Wrapper>
+
+            </Container>
+        )
+    }
 }
+
 
 const Container = styled.div`
   height: 100%;
@@ -43,6 +84,7 @@ const Container = styled.div`
       
       & {
           height: 200%;
+          padding: 0;
       }
 
       & > div:first-child {
@@ -128,6 +170,41 @@ const ProfileWr = styled.div`
   height: 100%;
   width: 35%;
   background-color: ${({ theme }) => theme.secondTrans};
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  justify-content: space-between;
+
+  @media only screen and ( min-width: 1920px ) {
+    
+    & {
+      padding: 3em;
+    }
+  }
+
+  /* tablet */
+  @media only screen and ( max-width: 1050px ) and ( orientation: portrait ) {
+      
+      & {
+          flex-direction: row;
+      }
+    }
+
+  /* PHONE portrait */
+  @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
+
+      & {
+          flex-direction: column;
+      }
+  }
+
+  /* phone landscape */
+  @media only screen and ( max-width: 440px ) and ( orientation: landscape ) {
+      
+    & {
+        flex-direction: row;
+    }
+  }
 `
 
 const ChartsWr = styled.div`
@@ -140,5 +217,8 @@ const NewsWr = styled(ChartsWr)`
   background-color: ${({ theme }) => theme.secondTrans};
 `
 
-const TrendsWr = styled(ProfileWr)` 
+const TrendsWr = styled.div` 
+  height: 100%;
+  width: 35%;
+  background-color: ${({ theme }) => theme.secondTrans};
 `

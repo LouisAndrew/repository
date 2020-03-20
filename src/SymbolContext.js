@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
-const SymbolContext = React.createContext('')
+const SymbolContext = React.createContext()
 
 class SymbolProvider extends Component {
 
     state = {
-        sym: ''
+        sym: 'AAPL'
     }
 
     setSym = sym => {

@@ -22,7 +22,7 @@ export default function App() {
     }
 
     return (
-        <SymbolProvider value={'AAPL'}>
+        <SymbolProvider>
             <ThemeProvider theme={theme}>
                 <Layout />
             </ThemeProvider>

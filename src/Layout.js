@@ -17,12 +17,12 @@ export default function Layout() {
 }
 
 const Container = styled.div`
-    height: 88vh;
+    height: 92vh;
     width: 100%;
 `
 
 const NavWr = styled.nav`
-  height: 12vh;
+  height: 8vh;
   width: 100%;
   background-color: ${({ theme }) => theme.second};
 `

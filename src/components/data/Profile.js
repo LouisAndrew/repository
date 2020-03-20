@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import ChartDisp from './display/ChartDisp'
+import ProfileDisp from './display/ProfileDisp'
 import { ReactComponent as Rolling } from './rolling.svg'
 import SymbolContext from '../../SymbolContext'
 
-export default class Chart extends Component {
+export default class Profile extends Component {
     static contextType = SymbolContext
 
     state = {
         isLoading: false,
         dataAvailable: false,
-        sym: this.context.sym,
+        sym: '',
         data: { }
      }
-
+    
     setSymbol = () => {
         this.setState(prev => {
             let temp = prev
@@ -20,17 +20,18 @@ export default class Chart extends Component {
             return temp
         }, () => this.getAndConsumeData())
      }
-
+    
     //for retrieving data from the API => before data fully retrieved, set isloading to true
     getAndConsumeData = () => {
 
-        console.log('getand consume')
         this.setState(prev => {
             let temp = prev
             temp.isLoading = true
+            temp.sym = this.context.sym
             return temp
         }, () => {
-            fetch(`https://finnhub.io/api/v1/stock/candle?symbol=${this.state.sym}&resolution=D&count=100&token=bpiirp7rh5rbgl0lb84g`)
+
+            fetch(`https://finnhub.io/api/v1/stock/profile?symbol=${this.state.sym}&token=bpiirp7rh5rbgl0lb84g`)
                 .then(rsp => rsp.ok ? rsp.json() : false)
                 .then(data => this.consumeData(data))
         })
@@ -38,33 +39,31 @@ export default class Chart extends Component {
 
     //func to consume data provided by the api to the state
     consumeData = data => {
-        //if data is provided, that means no 429
-        if (data) {
 
-            if (data.s.localeCompare('ok') === 0) {
-                //data is available
+        if (data) {
+            
+            if (data.name) {
+                //data is provided
                 this.setState(prev => {
                     let temp = prev
-                    temp.data.high = data.h
-                    temp.data.low = data.l
-                    temp.data.time = data.t.map(x => new Date(x * 1000))
+                    temp.data = data
                     temp.isLoading = false
                     temp.dataAvailable = true
-                    // this.props.fire(this.props.index)
+                    this.props.fire(this.props.index)
                     return temp
                 })
             } else {
-                //data is not available
+                //no data
                 this.setState(prev => {
                     let temp = prev
                     temp.dataAvailable = false
                     temp.isLoading = false
-                    // this.props.reject(this.props.index)
+                    this.props.reject(this.props.index)
                     return temp
                 })
             }
         } else {
-        //error 429 => past the limit
+            //error 429 => past the limit
             console.log('error 429')
             setTimeout(() => {
                 this.getAndConsumeData()
@@ -72,7 +71,7 @@ export default class Chart extends Component {
         }
      }
 
-    componentDidMount = () => {
+    componentDidMount = () => { 
         if (this.context.sym) {
             this.getAndConsumeData()
         }
@@ -80,11 +79,11 @@ export default class Chart extends Component {
 
     componentDidUpdate = () => {
         if (this.context.sym && this.context.sym.localeCompare(this.state.sym) !== 0) {
-            this.setSymbol()
+            this.getAndConsumeData()
         }
      }
 
     render() {
-        return !this.state.isLoading && this.state.dataAvailable ? <ChartDisp {...this.state.data} /> : <Rolling />
+        return this.state.isLoading === false && this.state.dataAvailable ? <ProfileDisp {...this.state.data} /> : <Rolling />
      }
 }
