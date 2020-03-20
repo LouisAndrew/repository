@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Chart from './data/Chart'
+import Trends from './data/Trends'
 import Profile from './data/Profile'
 import Quote from './data/Quote'
 import SymbolContext from '../SymbolContext'
@@ -51,18 +52,20 @@ export default class Content extends Component {
             <Container>
 
                 <Wrapper className='upper'>
-                    <ProfileWr className='profile'>
-                        <Profile fire={this.fire} index={0} />
+                    <ProfileWr doneLoading={this.state.doneLoading[0]} className='profile'>
+                        <Profile reject={this.reject} fire={this.fire} index={0} />
                         {this.state.doneLoading[0] && <Quote />}
                     </ProfileWr>
-                    <ChartsWr fire={this.fire} index={1} className='charts'>
+                    <ChartsWr reject={this.reject} fire={this.fire} index={1} className='charts'>
                         <Chart />
                     </ChartsWr>
                 </Wrapper>
 
                 <Wrapper>
                     <NewsWr className='news'></NewsWr>
-                    <TrendsWr className='trends'></TrendsWr>
+                    <TrendsWr className='trends'>
+                        <Trends reject={this.reject} fire={this.fire} index={2} />
+                    </TrendsWr>
                 </Wrapper>
 
             </Container>
@@ -123,10 +126,6 @@ const Wrapper = styled.div`
   &.upper {
       height: 45%;
   }
-/* 
-  div {
-      background-color: ${({ theme }) => theme.font};
-  } */
 
   @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
       
@@ -173,7 +172,9 @@ const ProfileWr = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1em;
-  justify-content: space-between;
+  justify-content: ${props => props.doneLoading ? 'space-between' : 'center'};
+  align-items: ${props => !props.doneLoading && 'center'};
+  
 
   @media only screen and ( min-width: 1920px ) {
     
@@ -211,6 +212,7 @@ const ChartsWr = styled.div`
   height: 100%;
   width: 60%;
   background-color: ${({ theme }) => theme.prim};
+  ${({ theme }) => theme.center()};
 `
 
 const NewsWr = styled(ChartsWr)`
@@ -221,4 +223,6 @@ const TrendsWr = styled.div`
   height: 100%;
   width: 35%;
   background-color: ${({ theme }) => theme.secondTrans};
+  position: relative;
+  ${({ theme }) => theme.center()};
 `

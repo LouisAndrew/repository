@@ -60,4 +60,5 @@ export default class Quote extends Component {
 const NoData = styled.h3`
   color: ${({ theme }) => theme.font};
   text-align: center;
+  font-size: 0.5em;
 `

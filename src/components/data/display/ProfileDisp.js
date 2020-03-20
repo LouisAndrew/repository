@@ -23,7 +23,7 @@ export default function ProfileDisp(props) {
 }
 
 const DetCont = styled.div`
-  height: 150px;
+  height: 120px;
   width: 60%;
   color: #fff;
   display: flex;
@@ -37,7 +37,7 @@ const DetCont = styled.div`
   }
 
   h2 {
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
       font-size: 1.6em;
   }
 
@@ -49,8 +49,8 @@ const DetCont = styled.div`
 `
 
 const ImgCont = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   ${({ theme }) => theme.center()};
 
   #logo-img {

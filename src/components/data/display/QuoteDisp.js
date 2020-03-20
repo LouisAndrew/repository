@@ -88,7 +88,7 @@ const Container = styled.div`
       font-size: 0.6em;
     }
 
-    h2 {
+    div h2, .material-icons {
       font-size: 0.7em;
     }
   }
@@ -99,7 +99,7 @@ const Container = styled.div`
       font-size: 0.6em;
     }
 
-    div h2 {
+    div h2, .material-icons {
       font-size: 0.7em;
     }
   }
