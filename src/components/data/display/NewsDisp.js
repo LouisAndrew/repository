@@ -60,7 +60,8 @@ const NewsWrapper = styled.div`
 
 const Item = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.font};
+  /* should be font */
+  background-color: pink;
   display: flex;
   flex-direction: column;
   margin: 2vh 0;
@@ -94,11 +95,16 @@ const Item = styled.div`
     }
   }
 
-  @media only screen and ( max-width: 3000px ) {
+  @media only screen and ( max-width: 850px ) {
 
     & {
       margin: 3em 0;
       opacity: 1;
+      background-color: rgba(21, 21, 21, 0.9);
+    }
+
+    & div h5 {
+      color: #fff;
     }
   }
 `
@@ -146,12 +152,11 @@ const Headline = styled.div`
   padding: 0.5em 0 0.5em 2em;
   color: #000;
   transition: 0.3s;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
+  & h5 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 `
 
@@ -195,6 +200,18 @@ const Summary = styled.div`
   a:visited, a:active {
     color: #fff;
     text-decoration: none;
+  }
+
+  @media only screen and ( max-width: 850px ) {
+
+    & {
+      position: relative;
+      top: 50px;
+    }
+
+    &.active {
+      z-index: 2;
+    }
   }
 `
 
