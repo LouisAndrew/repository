@@ -24,7 +24,7 @@ export default function QuoteDisp(props) {
 }
 
 const Tick = styled.div`
-  height: 100%;
+  height: 20%;
   width: 25%;
   background-color: ${({ theme }) => theme.second};
   display: flex;
@@ -42,7 +42,7 @@ const Tick = styled.div`
 `
 
 const Prog = styled.div`
-  height: 100%;
+  height: 50%;
   width: 35%;
   display: flex;
   align-items: center;
@@ -52,55 +52,46 @@ const Prog = styled.div`
   .material-icons {
     transform: rotate(${props => props.isUp ? '0deg' : '180deg'});
   }
+  h2 {
+      font-size: 1em;
+  }
 `
 
 const Container = styled.div`
-  height: 20%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* background-color: pink; */
 
-  @media only screen and ( max-width: 1050px ) and ( min-width: 464px ) and ( orientation: portrait ) {
+  @media only screen and ( max-width: 850px ) {
+      
+    & {
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 80%;
+    }
+
+    & > div:not(:last-child) {
+        height: 30%;
+        width: 50%;
+    }
+
+  }
+
+  @media only screen and ( max-width: 464px ) and ( orientation: portrait ) {
 
     & {
-      flex-direction: column;
-      justify-content: center;
-      width: 20%;
-      height: 100%;
+        height: 50%;
     }
-
-    div {
-      height: 10%;
-      width: 100%;
-      font-size: 0.8em;
-      margin-bottom: 1em;
-    }
-
-    div:last-child {
-      height: 50%;
-      font-size: 0.6em;
-    }
-  }
-
-  @media only screen and ( max-width: 464px ) {
 
     div h5 {
-      font-size: 0.6em;
+        font-size: 0.4em;
     }
 
-    div h2, .material-icons {
-      font-size: 0.7em;
-    }
-  }
-
-  @media only screen and ( max-width: 850px ) and ( orientation: landscape ) {
-    
-    div h5 {
-      font-size: 0.6em;
-    }
-
-    div h2, .material-icons {
-      font-size: 0.7em;
+    div h2 {
+        font-size: 0.6em;
     }
   }
 `

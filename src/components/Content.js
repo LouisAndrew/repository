@@ -163,6 +163,14 @@ const Container = styled.div`
           padding: 8vh 14vh;
       }
   }
+
+  @media only screen and ( min-width: 3000px ) {
+
+    #back {
+        transform: scale(2.5);
+        padding: 6em;
+    }
+  }
 `
 
 const Wrapper = styled.div`

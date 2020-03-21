@@ -199,4 +199,16 @@ const Container = styled.div`
       height: 145px;
     }
   }
+
+  @media only screen and ( min-width: 3000px ) {
+
+    & > div {
+      height: 250px;
+    }
+
+    & > div:first-child {
+      width: 250px;
+      height: 250px;
+    }
+  }
 `

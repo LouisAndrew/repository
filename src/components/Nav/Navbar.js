@@ -15,13 +15,15 @@ export default class Navbar extends Component {
     }
 
     submitSym = async sym => {
-        this.props.load(false)
+        await this.props.load(false)
         
         let result = await this.findSym(sym)
+        console.log(result)
         
         if (result) {
             console.log('if result...')
             if (result.length < 2) {
+                console.log('found!')
                 this.context.setSym(result[0])
             } else {
                 console.log(result)
@@ -93,6 +95,14 @@ const Container = styled.div`
 
   #logo-top path {
       fill: #fff;
+  }
+
+  @media only screen and ( min-width: 3000px ) {
+      #logo-top {
+          transform: scale(5);
+          left: 3em;
+          position: relative;
+      }
   }
 `
 const Wr = styled.div`

@@ -28,7 +28,7 @@ export default function NewsDisp(props) {
     <Container>
 
       <CompanyNews>
-        <h4>Company News...</h4>
+        <h3>Company News...</h3>
       </CompanyNews>
 
       <NewsWrapper>
@@ -40,13 +40,13 @@ export default function NewsDisp(props) {
 }
 
 const CompanyNews = styled.div`
-  height: 15%;
+  height: 20%;
   width: 100%;
-  background-color: ${({ theme }) => theme.prim};
+  background-color: ${({ theme }) => theme.second};
   display: flex;
   align-items: center;
   padding-left: 4vh;
-  color: ${({ theme }) => theme.font};
+  color: #fff;
 `
 
 const NewsWrapper = styled.div`
@@ -54,6 +54,7 @@ const NewsWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: ${({ theme }) => theme.prim};
 
 `
 
@@ -77,6 +78,21 @@ const Item = styled.div`
   &:hover {
     opacity: 1;
   }
+
+  @media only screen and ( min-width: 3000px ) {
+    
+    & {
+      margin: 0.5vh;
+    }
+
+    div h5 {
+      font-size: 1em;
+    }
+
+    div p {
+      font-size: 0.9em;
+    }
+  }
 `
 
 const Inner = styled.div`
@@ -84,6 +100,21 @@ const Inner = styled.div`
   width: 100%;
   display: flex;
   padding: 0 1em;
+
+  @media only screen and ( min-width: 3000px ) {
+
+    & {
+      height: 100px;
+    }
+
+    & > div {
+      height: 100px;
+    }
+
+    & div:first-child {
+      width: 100px;
+    }
+  }
 `
 
 const Img = styled.div`

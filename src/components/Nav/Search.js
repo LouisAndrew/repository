@@ -83,7 +83,7 @@ const Input = styled.input`
   outline: none;
   border: none;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 0.8em;
   padding: 0 1em;
   opacity: 0;
   transition: 0.2s;
