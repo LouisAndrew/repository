@@ -93,6 +93,14 @@ const Item = styled.div`
       font-size: 0.9em;
     }
   }
+
+  @media only screen and ( max-width: 3000px ) {
+
+    & {
+      margin: 3em 0;
+      opacity: 1;
+    }
+  }
 `
 
 const Inner = styled.div`
