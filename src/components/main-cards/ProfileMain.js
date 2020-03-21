@@ -15,13 +15,15 @@ export default function ProfileMain(props) {
 
 const Container = styled.div`
   ${({ theme }) => theme.fitContainer()};
-  ${({ theme }) => theme.center()};
   display: flex;
-  background-color: pink;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em 0;
 
   img {
-      height: 80px;
-      width: 80px;
+      height: 120px;
+      width: 120px;
       border-radius: 10px;
   }
 
@@ -31,28 +33,33 @@ const Container = styled.div`
   }
 
   div h4 {
-      padding-left: 0.5em;
-      font-size: 1.3em;
+      font-size: 2em;
       color: #fff;
+      align-self: flex-end;
+      background-color: #000;
+      max-width: 100%;
   }
 
-  @media only screen and ( max-width: 850px ) {
+  @media only screen and ( max-width: 440px ) and ( orientation: portrait )  {
+
+      & {
+          padding: 2vh 0;
+      }
       
-    & {
-        flex-direction: column;
-    }
+      img {
+          height: 40px;
+          width: 40px;
+      }
+
+      div h4 {
+          font-size: 0.6em;
+      }
   }
 
-  @media only screen and ( max-width: 464px ) and ( orientation: portrait ) {
+  @media only screen and ( max-width: 440px ) and ( min-height: 660px ) and ( orientation: portrait ) {
 
-    img {
-        height: 40px;
-        width: 40px;
-    }
-
-    div h4 {
-        font-size: 0.8em;
-        padding-left: 0;
-    }
+      div h4 {
+          align-self: center;
+      }
   }
 `

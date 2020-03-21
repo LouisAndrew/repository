@@ -2,17 +2,23 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import ProfileMain from './ProfileMain'
 import QuoteMain from './QuoteMain'
+import SymbolContext from '../../SymbolContext'
 
 export default class Card extends Component {
+    static contextType = SymbolContext
+
+    click = () => {
+        this.context.setSym(this.props.sym)
+    }
 
     render() {
         return (
-            <Container>
+            <Container onClick={this.click}>
+                <Upper>
+                  <ProfileMain name={this.props.name} />
+                </Upper>
                 <Inner>
-                  <ProfileMain name='apple' />
-                </Inner>
-                <Inner>
-                  <QuoteMain sym='AAPL' />
+                  <QuoteMain sym={this.props.sym} />
                 </Inner>
             </Container>
         )
@@ -21,17 +27,21 @@ export default class Card extends Component {
 
 const Inner = styled.div`
   height: 100%;
-  width: 100%;
-  background-color: #fff;
+  width: 40%;
   ${({ theme }) => theme.center()};
 `
 
+const Upper = styled.div`
+  height: 100%;
+  width: 60%;
+  ${({ theme }) => theme.center()};
+`;
+
 const Container = styled.div`
-  height: 40%;
-  width: 20%;
+  height: 350px;
+  width: 250px;
   margin: 2em;
   display: flex;
-  flex-direction: column;
   background-color: ${({ theme }) => theme.secondTrans};
   padding: 1em;
 
@@ -41,6 +51,13 @@ const Container = styled.div`
       width: 40%;
       margin: 1em 0;
       height: 30%;
+    }
+  }
+
+  @media only screen and ( max-width: 464px ) and ( min-height: 660px ) and ( orientation: portrait ) {
+
+    & {
+      height: 25%;
     }
   }
 `

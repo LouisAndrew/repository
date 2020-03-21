@@ -17,15 +17,15 @@ export default function QuoteDisp(props) {
           <div><h5>{props.data.l.toFixed(2)}</h5></div>
         </Tick>
         <Prog isUp={up}>
-          <h2><span className="material-icons">arrow_upward</span>{prog.toFixed(2)}%</h2>
+          <h2>{prog.toFixed(2)}%</h2>
         </Prog>
       </Container>
     )
 }
 
 const Tick = styled.div`
-  height: 20%;
-  width: 25%;
+  height: 15%;
+  width: 80%;
   background-color: ${({ theme }) => theme.second};
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ const Tick = styled.div`
 
 const Prog = styled.div`
   height: 50%;
-  width: 35%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -53,7 +53,7 @@ const Prog = styled.div`
     transform: rotate(${props => props.isUp ? '0deg' : '180deg'});
   }
   h2 {
-      font-size: 1em;
+      font-size: 1.6em;
   }
 `
 
@@ -63,35 +63,22 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  padding: 3em 0;
   /* background-color: pink; */
 
-  @media only screen and ( max-width: 850px ) {
-      
-    & {
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 80%;
-    }
-
-    & > div:not(:last-child) {
-        height: 30%;
-        width: 50%;
-    }
-
-  }
-
-  @media only screen and ( max-width: 464px ) and ( orientation: portrait ) {
+  @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
 
     & {
-        height: 50%;
+      padding: 2vh 0;
     }
 
-    div h5 {
-        font-size: 0.4em;
+    div h5 { 
+      font-size: 0.3em;
     }
 
     div h2 {
-        font-size: 0.6em;
+      font-size: 0.5em;
     }
   }
 `

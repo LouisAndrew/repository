@@ -5,25 +5,59 @@ import Card from './main-cards/Card'
 
 export default class Main extends Component { 
 
+    state = {
+      data: [
+        {
+          name: 'amazon',
+          sym: 'AMZN'
+        },
+        {
+          name: 'facebook',
+          sym: 'FB'
+        },
+        {
+          name: 'twitter',
+          sym: 'TWTR'
+        },
+        {
+          name: 'yahoo',
+          sym: 'YHOO'
+        },
+        {
+          name: 'apple',
+          sym: 'AAPL'
+        },
+        {
+          name: 'starbucks',
+          sym: 'SBUX'
+        },
+        {
+          name: "mcdonald's",
+          sym: 'MCD'
+        },
+        {
+          name: 'spotify',
+          sym: 'SPOT'
+        },
+        {
+          name: 'google',
+          sym: 'GOOG'
+        }
+      ]
+    }
 
     render() {
+        const ret = this.state.data.map(x => <Card {...x} />)
         return (
             <Container>
                 
                 <Wrapper>
 
                     <Note>
-                        <h3>Trending Stocks Right Now...</h3>
+                        <h3>Our Recommendations..</h3>
                     </Note>
                     <CardWr>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                      {ret}
                     </CardWr>
 
                 </Wrapper>
@@ -60,7 +94,6 @@ const CardWr = styled.div`
   &::-webkit-scrollbar {
     display: none
   }
-  background-color: #fff;
 `
 
 const Container = styled.div`
