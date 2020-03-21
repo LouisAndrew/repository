@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a8bc46a38fd046e44b05e574b690869b",
+    "revision": "a79749ee7260b0df36e95d16f082edeb",
     "url": "/rostox-app/index.html"
   },
   {
-    "revision": "cce94c743f9259d79f6f",
+    "revision": "2b3c3a1a60ee4fb03191",
     "url": "/rostox-app/static/css/main.1cc766d9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rostox-app/static/js/2.effbeb62.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cce94c743f9259d79f6f",
-    "url": "/rostox-app/static/js/main.a62945dd.chunk.js"
+    "revision": "2b3c3a1a60ee4fb03191",
+    "url": "/rostox-app/static/js/main.4f200570.chunk.js"
   },
   {
     "revision": "899860f4b51540681f02",
