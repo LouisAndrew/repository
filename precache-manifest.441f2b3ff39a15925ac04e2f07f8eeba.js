@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d8ec27ec0b34ecf9c9afd82fdd1d655d",
+    "revision": "e49fd13461da991bce23adb1a51fb947",
     "url": "/rostox-app/index.html"
   },
   {

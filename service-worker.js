@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rostox-app/precache-manifest.09f007a777c4d696fe90794a45973a08.js"
+  "/rostox-app/precache-manifest.441f2b3ff39a15925ac04e2f07f8eeba.js"
 );
 
 self.addEventListener('message', (event) => {
