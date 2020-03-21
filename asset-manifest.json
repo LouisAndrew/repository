@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/rostox-app/static/css/main.1cc766d9.chunk.css",
-    "main.js": "/rostox-app/static/js/main.990ef04a.chunk.js",
-    "main.js.map": "/rostox-app/static/js/main.990ef04a.chunk.js.map",
+    "main.js": "/rostox-app/static/js/main.10f3e54e.chunk.js",
+    "main.js.map": "/rostox-app/static/js/main.10f3e54e.chunk.js.map",
     "runtime-main.js": "/rostox-app/static/js/runtime-main.0d3dfa87.js",
     "runtime-main.js.map": "/rostox-app/static/js/runtime-main.0d3dfa87.js.map",
-    "static/js/2.effbeb62.chunk.js": "/rostox-app/static/js/2.effbeb62.chunk.js",
-    "static/js/2.effbeb62.chunk.js.map": "/rostox-app/static/js/2.effbeb62.chunk.js.map",
+    "static/js/2.88ee4088.chunk.js": "/rostox-app/static/js/2.88ee4088.chunk.js",
+    "static/js/2.88ee4088.chunk.js.map": "/rostox-app/static/js/2.88ee4088.chunk.js.map",
     "index.html": "/rostox-app/index.html",
-    "precache-manifest.150344a74f37498ebf210d8d982696b6.js": "/rostox-app/precache-manifest.150344a74f37498ebf210d8d982696b6.js",
+    "precache-manifest.09f007a777c4d696fe90794a45973a08.js": "/rostox-app/precache-manifest.09f007a777c4d696fe90794a45973a08.js",
     "service-worker.js": "/rostox-app/service-worker.js",
     "static/css/main.1cc766d9.chunk.css.map": "/rostox-app/static/css/main.1cc766d9.chunk.css.map",
-    "static/js/2.effbeb62.chunk.js.LICENSE.txt": "/rostox-app/static/js/2.effbeb62.chunk.js.LICENSE.txt",
+    "static/js/2.88ee4088.chunk.js.LICENSE.txt": "/rostox-app/static/js/2.88ee4088.chunk.js.LICENSE.txt",
     "static/media/back.fb78c7df.svg": "/rostox-app/static/media/back.fb78c7df.svg",
     "static/media/elipsis.3676b289.svg": "/rostox-app/static/media/elipsis.3676b289.svg",
     "static/media/rolling.9a766bcc.svg": "/rostox-app/static/media/rolling.9a766bcc.svg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.0d3dfa87.js",
-    "static/js/2.effbeb62.chunk.js",
+    "static/js/2.88ee4088.chunk.js",
     "static/css/main.1cc766d9.chunk.css",
-    "static/js/main.990ef04a.chunk.js"
+    "static/js/main.10f3e54e.chunk.js"
   ]
 }
