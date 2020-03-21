@@ -20,8 +20,8 @@ export default class Main extends Component {
           sym: 'TWTR'
         },
         {
-          name: 'yahoo',
-          sym: 'AABA'
+          name: 'tesla',
+          sym: 'TSLA'
         },
         {
           name: 'apple',
@@ -32,16 +32,24 @@ export default class Main extends Component {
           sym: 'SBUX'
         },
         {
-          name: "mcdonald's",
-          sym: 'MCD'
+          name: "microsoft",
+          sym: 'MSFT'
         },
         {
           name: 'spotify',
           sym: 'SPOT'
         },
         {
-          name: 'google',
-          sym: 'GOOG'
+          name: 'nike',
+          sym: 'NKE'
+        },
+        {
+          name: 'paypal',
+          sym: 'PYPL'
+        },
+        {
+          name: 'visa',
+          sym: 'V'
         }
       ]
     }

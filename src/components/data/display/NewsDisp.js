@@ -43,8 +43,10 @@ const CompanyNews = styled.div`
   height: 20%;
   width: 100%;
   background-color: ${({ theme }) => theme.second};
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  ${({ theme }) => theme.flex()}
+  /* align-items: center; */
+  ${({ theme }) => theme.alignItems('center')}
   padding-left: 4vh;
   color: #fff;
 `
@@ -52,18 +54,22 @@ const CompanyNews = styled.div`
 const NewsWrapper = styled.div`
   height: min-content;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.prim};
+  /* display: flex;
+  flex-direction: column; */
+  ${({ theme }) => theme.flex()}
+  ${({ theme }) => theme.flexFlow('column wrap')}
+  background-color: ${({ theme }) => theme.prim}
 
 `
 
 const Item = styled.div`
   width: 100%;
   /* should be font */
-  background-color: pink;
-  display: flex;
-  flex-direction: column;
+  background-color: ${({ theme }) => theme.font};
+  /* display: flex;
+  flex-flow: column wrap; */
+  ${({ theme }) => theme.flex()}
+  ${({ theme }) => theme.flexFlow('column wrap')}
   margin: 2vh 0;
   transition: 0.3s;
   opacity: 0.5;
@@ -98,9 +104,7 @@ const Item = styled.div`
   @media only screen and ( max-width: 850px ) {
 
     & {
-      margin: 3em 0;
       opacity: 1;
-      background-color: rgba(21, 21, 21, 0.9);
     }
 
     & div h5 {
@@ -112,7 +116,8 @@ const Item = styled.div`
 const Inner = styled.div`
   height: 50px;
   width: 100%;
-  display: flex;
+  /* display: flex; */
+  ${({ theme }) => theme.flex()}
   padding: 0 1em;
   z-index: 2;
 
@@ -147,8 +152,10 @@ const Img = styled.div`
 const Headline = styled.div`
   height: 50px;
   width: 100%;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
+  ${({ theme }) => theme.flex()}
+  ${({ theme }) => theme.alignItems('center')}
   padding: 0.5em 0 0.5em 2em;
   color: #000;
   transition: 0.3s;
@@ -204,10 +211,10 @@ const Summary = styled.div`
 
   @media only screen and ( max-width: 850px ) {
 
-    & {
+    /* & {
       position: relative;
       top: 50px;
-    }
+    } */
 
     &.active {
       z-index: 2;
@@ -216,9 +223,11 @@ const Summary = styled.div`
 `
 
 const Container = styled.div`
-  ${({ theme }) => theme.fitContainer()};
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.fitContainer()}
+  /* display: flex;
+  ${({ theme }) => theme.flex()}
+  /* flex-flow: column nowrap; */
+  ${({ theme }) => theme.flexFlow('column nowrap')}
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;

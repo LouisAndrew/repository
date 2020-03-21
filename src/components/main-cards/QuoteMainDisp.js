@@ -73,8 +73,12 @@ const Container = styled.div`
       padding: 2vh 0;
     }
 
+    & div:not(:last-child) {
+      height: 25%;
+    }
+
     div h5 { 
-      font-size: 0.3em;
+      font-size: 0.2em;
     }
 
     div h2 {

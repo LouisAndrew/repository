@@ -2,6 +2,7 @@ import React from 'react'
 import { SymbolProvider } from './SymbolContext'
 import { ThemeProvider } from 'styled-components'
 import Layout from './Layout'
+import { Helmet } from 'react-helmet'
 
 export default function App() {
 
@@ -17,57 +18,94 @@ export default function App() {
             display: -ms-flexbox;
             display: flex;
         `),
-        flexFlow: val => {(`
+        flexFlow: val => (`
             -webkit-flex-flow: ${val};
             -ms-flex-flow: ${val};
             flex-flow: ${val};
-        `)},
-            //should be flexdirection..
-            // let flexDirection = `
-            //     -webkit-flex-direction: ${dir};
-            //     -ms-flex-direction: ${dir};
-            //     flex-direction: ${dir};
-            // `
-            // switch (dir) {
-            //     case 'row': 
-            //         flexDirection = `
-            //             ${flexDirection}
-            //             -webkit-box-direction: normal;
-            //             -webkit-box-orient: horizontal;
-            //             -moz-box-direction: normal;
-            //             -moz-box-orient: horizontal;
-            //         `
-            //         break
-            //     case 'row-reverse':
-            //         flexDirection = `
-            //             ${flexDirection}
-            //             -webkit-box-direction: reverse;
-            //             -webkit-box-orient: horizontal;
-            //             -moz-box-direction: reverse;
-            //             -moz-box-orient: horizontal;
-            //         `
-            //         break
-            //     case 'column':
-            //         flexDirection = `
-            //             ${flexDirection}
-            //             -webkit-box-direction: normal;
-            //             -webkit-box-orient: vertical;
-            //             -moz-box-direction: normal;
-            //             -moz-box-orient: vertical;
-            //         `
-            //         break
-            //     case 'column-reverse':
-            //         flexDirection = `
-            //             ${flexDirection}
-            //             -webkit-box-direction: reverse;
-            //             -webkit-box-orient: vertical;
-            //             -moz-box-direction: reverse;
-            //             -moz-box-orient: vertical;
-            //         `
-            //         break
-            // }
+        `),
+        justifyContent: val => {
+            let toRet = `
+            -webkit-justify-content: ${val};
+            justify-content: ${val};
+            `
 
-            // let flexWrap = wrap === ''
+            switch (val) {
+                case 'flex-start':
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-pack: start;
+                        -moz-box-pack: start;
+                        -ms-flex-pack: start;
+                    `
+                    break
+                case 'flex-end':
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-pack: end;
+                        -moz-box-pack: end;
+                        -ms-flex-pack: end;
+                    `
+                    break
+                case 'space-between':
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-pack: justify;
+                        -moz-box-pack: justify;
+                        -ms-flex-pack: justify;
+                    `
+                    break
+                case 'space-around':
+                    toRet = `
+                        ${toRet}
+                        -ms-flex-pack: distribute;
+                    `
+                    break
+                default:
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-pack: ${val};
+                        -moz-box-pack: ${val};
+                        -ms-flex-pack: ${val};
+                    `
+                    break
+            }
+
+            return toRet
+        },
+        alignItems: val => {
+            let toRet = `
+                -webkit-align-items: ${val};
+                align-items: ${val};
+            `
+
+            switch (val) {
+                case 'flex-start':
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-align: start;
+                        -moz-box-align: start;
+                        -ms-flex-align: start;
+                    `
+                    break
+                case 'flex-end':
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-align: end;
+                        -moz-box-align: end;
+                        -ms-flex-align: end;
+                    `
+                    break
+                default:
+                    toRet = `
+                        ${toRet}
+                        -webkit-box-align: ${val};
+                        -moz-box-align: ${val};
+                        -ms-flex-align: ${val};
+                    `
+                    break
+            }
+            return toRet
+        },
         center: () => (`
             display: flex;
             justify-content: center;
@@ -82,6 +120,10 @@ export default function App() {
     return (
         <SymbolProvider>
             <ThemeProvider theme={theme}>
+                <Helmet>
+                    <meta charSet='utf-8' />
+                    <title>Roxstok App</title>
+                </Helmet>
                 <Layout />
             </ThemeProvider>
         </SymbolProvider>

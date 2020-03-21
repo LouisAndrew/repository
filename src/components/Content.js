@@ -145,6 +145,10 @@ const Container = styled.div`
       & > div:first-child {
         margin-bottom: 3em;
       }
+
+      #back {
+          transform: scale(1);
+      }
   }
 
   @media only screen and ( max-width: 850px ) and ( orientation: landscape ) {
