@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/repository/static/css/main.1cc766d9.chunk.css",
+    "main.js": "/repository/static/js/main.d2280e0f.chunk.js",
+    "main.js.map": "/repository/static/js/main.d2280e0f.chunk.js.map",
+    "runtime-main.js": "/repository/static/js/runtime-main.d2cdb49a.js",
+    "runtime-main.js.map": "/repository/static/js/runtime-main.d2cdb49a.js.map",
+    "static/js/2.c10e7a0f.chunk.js": "/repository/static/js/2.c10e7a0f.chunk.js",
+    "static/js/2.c10e7a0f.chunk.js.map": "/repository/static/js/2.c10e7a0f.chunk.js.map",
+    "index.html": "/repository/index.html",
+    "precache-manifest.73eb77d8a9d043372540f815c373e8f3.js": "/repository/precache-manifest.73eb77d8a9d043372540f815c373e8f3.js",
+    "service-worker.js": "/repository/service-worker.js",
+    "static/css/main.1cc766d9.chunk.css.map": "/repository/static/css/main.1cc766d9.chunk.css.map",
+    "static/js/2.c10e7a0f.chunk.js.LICENSE.txt": "/repository/static/js/2.c10e7a0f.chunk.js.LICENSE.txt",
+    "static/media/back.fb78c7df.svg": "/repository/static/media/back.fb78c7df.svg",
+    "static/media/elipsis.3676b289.svg": "/repository/static/media/elipsis.3676b289.svg",
+    "static/media/rolling.9a766bcc.svg": "/repository/static/media/rolling.9a766bcc.svg",
+    "static/media/roxstok2.7fed8520.svg": "/repository/static/media/roxstok2.7fed8520.svg",
+    "static/media/search.a88f7755.svg": "/repository/static/media/search.a88f7755.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2cdb49a.js",
+    "static/js/2.c10e7a0f.chunk.js",
+    "static/css/main.1cc766d9.chunk.css",
+    "static/js/main.d2280e0f.chunk.js"
+  ]
+}
