@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/repository/static/css/main.1cc766d9.chunk.css",
-    "main.js": "/repository/static/js/main.5ff8c252.chunk.js",
-    "main.js.map": "/repository/static/js/main.5ff8c252.chunk.js.map",
-    "runtime-main.js": "/repository/static/js/runtime-main.d2cdb49a.js",
-    "runtime-main.js.map": "/repository/static/js/runtime-main.d2cdb49a.js.map",
-    "static/js/2.c10e7a0f.chunk.js": "/repository/static/js/2.c10e7a0f.chunk.js",
-    "static/js/2.c10e7a0f.chunk.js.map": "/repository/static/js/2.c10e7a0f.chunk.js.map",
-    "index.html": "/repository/index.html",
-    "precache-manifest.ca18effdc5282af168435ead65fdc96f.js": "/repository/precache-manifest.ca18effdc5282af168435ead65fdc96f.js",
-    "service-worker.js": "/repository/service-worker.js",
-    "static/css/main.1cc766d9.chunk.css.map": "/repository/static/css/main.1cc766d9.chunk.css.map",
-    "static/js/2.c10e7a0f.chunk.js.LICENSE.txt": "/repository/static/js/2.c10e7a0f.chunk.js.LICENSE.txt",
-    "static/media/back.fb78c7df.svg": "/repository/static/media/back.fb78c7df.svg",
-    "static/media/elipsis.3676b289.svg": "/repository/static/media/elipsis.3676b289.svg",
-    "static/media/rolling.9a766bcc.svg": "/repository/static/media/rolling.9a766bcc.svg",
-    "static/media/roxstok2.7fed8520.svg": "/repository/static/media/roxstok2.7fed8520.svg",
-    "static/media/search.a88f7755.svg": "/repository/static/media/search.a88f7755.svg"
+    "main.css": "/rostox-app/static/css/main.1cc766d9.chunk.css",
+    "main.js": "/rostox-app/static/js/main.a62945dd.chunk.js",
+    "main.js.map": "/rostox-app/static/js/main.a62945dd.chunk.js.map",
+    "runtime-main.js": "/rostox-app/static/js/runtime-main.0d3dfa87.js",
+    "runtime-main.js.map": "/rostox-app/static/js/runtime-main.0d3dfa87.js.map",
+    "static/js/2.effbeb62.chunk.js": "/rostox-app/static/js/2.effbeb62.chunk.js",
+    "static/js/2.effbeb62.chunk.js.map": "/rostox-app/static/js/2.effbeb62.chunk.js.map",
+    "index.html": "/rostox-app/index.html",
+    "precache-manifest.3f54ac4c037eadebe8b105dbfadb10bf.js": "/rostox-app/precache-manifest.3f54ac4c037eadebe8b105dbfadb10bf.js",
+    "service-worker.js": "/rostox-app/service-worker.js",
+    "static/css/main.1cc766d9.chunk.css.map": "/rostox-app/static/css/main.1cc766d9.chunk.css.map",
+    "static/js/2.effbeb62.chunk.js.LICENSE.txt": "/rostox-app/static/js/2.effbeb62.chunk.js.LICENSE.txt",
+    "static/media/back.fb78c7df.svg": "/rostox-app/static/media/back.fb78c7df.svg",
+    "static/media/elipsis.3676b289.svg": "/rostox-app/static/media/elipsis.3676b289.svg",
+    "static/media/rolling.9a766bcc.svg": "/rostox-app/static/media/rolling.9a766bcc.svg",
+    "static/media/roxstok2.7fed8520.svg": "/rostox-app/static/media/roxstok2.7fed8520.svg",
+    "static/media/search.a88f7755.svg": "/rostox-app/static/media/search.a88f7755.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2cdb49a.js",
-    "static/js/2.c10e7a0f.chunk.js",
+    "static/js/runtime-main.0d3dfa87.js",
+    "static/js/2.effbeb62.chunk.js",
     "static/css/main.1cc766d9.chunk.css",
-    "static/js/main.5ff8c252.chunk.js"
+    "static/js/main.a62945dd.chunk.js"
   ]
 }
