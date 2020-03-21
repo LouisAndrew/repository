@@ -100,6 +100,7 @@ const Inner = styled.div`
   width: 100%;
   display: flex;
   padding: 0 1em;
+  z-index: 2;
 
   @media only screen and ( min-width: 3000px ) {
 
@@ -114,6 +115,10 @@ const Inner = styled.div`
     & div:first-child {
       width: 100px;
     }
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `
 

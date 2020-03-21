@@ -36,7 +36,6 @@ const Container = styled.div`
       font-size: 2em;
       color: #fff;
       align-self: flex-end;
-      background-color: #000;
       max-width: 100%;
   }
 

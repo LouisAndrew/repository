@@ -74,8 +74,10 @@ export default class Content extends Component {
 
         const screen = window.matchMedia('( max-width: 850px )')
 
-        if (screen) {
+        if (screen.matches) {
             document.body.style.overflowY = noScroll ? 'hidden' : 'scroll'
+        } else {
+            document.body.style.overflowY = 'hidden'
         }
         
 

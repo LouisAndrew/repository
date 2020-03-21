@@ -21,7 +21,7 @@ export default class Main extends Component {
         },
         {
           name: 'yahoo',
-          sym: 'YHOO'
+          sym: 'AABA'
         },
         {
           name: 'apple',

@@ -34,6 +34,14 @@ const DetCont = styled.div`
 
 
   div {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+ }
+
+ div::-webkit-scrollbar {
+  display: none;
+}
   }
 
   h2 {
