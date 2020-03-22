@@ -29,13 +29,16 @@ const Container = styled.div`
 
   div {
       ${({ theme }) => theme.fitContainer()};
-      ${({ theme }) => theme.center()};
+      ${({ theme }) => theme.flex()};
+      ${({ theme }) => theme.justifyContent('flex-start')};
+      ${({ theme }) => theme.alignItems('flex-end')};
+      width: 150%;
+      align-self: flex-start;
   }
 
   div h4 {
       font-size: 2em;
       color: #fff;
-      align-self: flex-end;
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
