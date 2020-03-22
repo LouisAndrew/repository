@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2986f4719262018a5d39eb4f0275750a",
+    "revision": "2c3f029811a2bdc6cf8a173bc4893b42",
     "url": "/roxstok-app/index.html"
   },
   {
-    "revision": "87e2f9ddb8c635f023c9",
+    "revision": "e3e82d388cc8edc40826",
     "url": "/roxstok-app/static/css/main.1cc766d9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/roxstok-app/static/js/2.2187102c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87e2f9ddb8c635f023c9",
-    "url": "/roxstok-app/static/js/main.8b3afe5c.chunk.js"
+    "revision": "e3e82d388cc8edc40826",
+    "url": "/roxstok-app/static/js/main.8275b187.chunk.js"
   },
   {
     "revision": "4823da0bbd383987e825",
