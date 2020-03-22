@@ -41,8 +41,7 @@ const DetCont = styled.div`
 
  div::-webkit-scrollbar {
   display: none;
-}
-  }
+ }
 
   h2 {
       margin-bottom: 0.5em;
@@ -210,11 +209,15 @@ const Container = styled.div`
 
   @media only screen and ( min-width: 3000px ) {
 
-    & > div {
+    div:nth-child(2) {
       height: 250px;
     }
 
-    & > div:first-child {
+    & div h5 {
+      font-size: 0.8em;
+    }
+
+    div:first-child {
       width: 250px;
       height: 250px;
     }

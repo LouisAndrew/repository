@@ -13,7 +13,7 @@ export default class Card extends Component {
 
     render() {
         return (
-            <Container onClick={this.click}>
+            <Container className='card' onClick={this.click}>
                 <Upper>
                   <ProfileMain name={this.props.name} />
                 </Upper>
@@ -58,6 +58,14 @@ const Container = styled.div`
 
     & {
       height: 25%;
+    }
+  }
+
+  @media only screen and ( min-width: 3000px ) {
+    
+    & {
+      height: 700px;
+      width: 500px;
     }
   }
 `

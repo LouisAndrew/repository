@@ -175,7 +175,8 @@ const Container = styled.div`
 
     #back {
         transform: scale(2.5);
-        padding: 6em;
+        top: 3vh;
+        left: 3vh;
     }
   }
 `

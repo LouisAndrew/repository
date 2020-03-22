@@ -11,7 +11,7 @@ export default function Error() {
     return (
         <Container>
             <Back onClick={back} id='back' />
-            <h1>You're Lost Bro..</h1>
+            <h1> </h1>
         </Container>
     )
 }

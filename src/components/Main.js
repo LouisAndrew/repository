@@ -3,11 +3,22 @@ import styled from 'styled-components'
 import SymbolContext from '../SymbolContext'
 import Card from './main-cards/Card'
 import { ReactComponent as Back } from './back.svg'
+import anime from 'animejs/lib/anime.es.js'
 
 export default class Main extends Component { 
 
     backClick = () => {
       this.props.backClick()
+    }
+
+    componentDidMount = () => {
+      anime({
+        targets: '.card',
+        opacity: [0, 1],
+        translateY: [-100, 0],
+        duration: 2000,
+        delay: anime.stagger(100)
+      })
     }
 
     render() {

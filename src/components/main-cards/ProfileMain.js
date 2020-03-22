@@ -68,4 +68,12 @@ const Container = styled.div`
           align-self: center;
       }
   }
+
+  @media only screen and ( min-width: 3000px ) {
+
+      img {
+          height: 400px;
+          width: 200px;
+      }
+  }
 `

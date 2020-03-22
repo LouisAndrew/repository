@@ -12,7 +12,7 @@ export default function Loading() {
 
     return (
         <Container>
-            <Elips />
+            <Elips id='elips' />
             {time && <h2>This Will Take a Few Moments..</h2>}
         </Container>    
     )
@@ -27,6 +27,11 @@ const Container = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
+
+  #elips {
+      height: 10vh;
+      width: 20vw;
+  }
 
   h2 {
       position: absolute;
