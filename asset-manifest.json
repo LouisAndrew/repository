@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/roxstok-app/static/css/main.1cc766d9.chunk.css",
-    "main.js": "/roxstok-app/static/js/main.394b5f71.chunk.js",
-    "main.js.map": "/roxstok-app/static/js/main.394b5f71.chunk.js.map",
+    "main.js": "/roxstok-app/static/js/main.cf9910a8.chunk.js",
+    "main.js.map": "/roxstok-app/static/js/main.cf9910a8.chunk.js.map",
     "runtime-main.js": "/roxstok-app/static/js/runtime-main.ba178ccb.js",
     "runtime-main.js.map": "/roxstok-app/static/js/runtime-main.ba178ccb.js.map",
     "static/js/2.edc8cf37.chunk.js": "/roxstok-app/static/js/2.edc8cf37.chunk.js",
     "static/js/2.edc8cf37.chunk.js.map": "/roxstok-app/static/js/2.edc8cf37.chunk.js.map",
     "index.html": "/roxstok-app/index.html",
-    "precache-manifest.c6f1e5321a13099e72d3b9e5f840e613.js": "/roxstok-app/precache-manifest.c6f1e5321a13099e72d3b9e5f840e613.js",
+    "precache-manifest.16617f9a6dc064b5caea6e6ea6f9da95.js": "/roxstok-app/precache-manifest.16617f9a6dc064b5caea6e6ea6f9da95.js",
     "service-worker.js": "/roxstok-app/service-worker.js",
     "static/css/main.1cc766d9.chunk.css.map": "/roxstok-app/static/css/main.1cc766d9.chunk.css.map",
     "static/js/2.edc8cf37.chunk.js.LICENSE.txt": "/roxstok-app/static/js/2.edc8cf37.chunk.js.LICENSE.txt",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.ba178ccb.js",
     "static/js/2.edc8cf37.chunk.js",
     "static/css/main.1cc766d9.chunk.css",
-    "static/js/main.394b5f71.chunk.js"
+    "static/js/main.cf9910a8.chunk.js"
   ]
 }
