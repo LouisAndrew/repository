@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/roxstok-app/precache-manifest.bb529f13e540adbd879942091c513d39.js"
+  "/roxstok-app/precache-manifest.c6f1e5321a13099e72d3b9e5f840e613.js"
 );
 
 self.addEventListener('message', (event) => {
