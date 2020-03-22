@@ -37,6 +37,10 @@ const Container = styled.div`
       color: #fff;
       align-self: flex-end;
       max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      white-space: nowrap;
   }
 
   @media only screen and ( max-width: 440px ) and ( orientation: portrait )  {

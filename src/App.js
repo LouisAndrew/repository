@@ -1,6 +1,6 @@
 import React from 'react'
 import { SymbolProvider } from './SymbolContext'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Layout from './Layout'
 import { Helmet } from 'react-helmet'
 
@@ -117,9 +117,30 @@ export default function App() {
         `)
     }
 
+    // const fontResize = i => {
+    //     let toRet = ''
+    //     for (let j = 1; j <= i; j++) {
+    //         let temp = `
+    //             @media only screen and ( min-width: ${100 * j}px ) {
+    //                 body {
+    //                     font-size: ${0.2*j}em;
+    //                 }
+    //             }
+    //         `
+    //         toRet = `${toRet} ${temp}`
+    //     }
+
+    //     return toRet
+    // }
+
+    // const Global = createGlobalStyle`
+    //   ${fontResize(20)}
+    // `
+
     return (
         <SymbolProvider>
             <ThemeProvider theme={theme}>
+                {/* <Global /> */}
                 <Helmet>
                     <meta charSet='utf-8' />
                     <title>Roxstok App</title>
