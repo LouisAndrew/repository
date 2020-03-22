@@ -89,7 +89,6 @@ export default class Layout extends Component {
 const Container = styled.div`
     height: 92vh;
     width: 100%;
-    background-color: pink;
 `
 
 const NavWr = styled.nav`

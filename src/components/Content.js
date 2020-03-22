@@ -107,6 +107,8 @@ export default class Content extends Component {
                     </TrendsWr>
                 </Wrapper>
 
+                <h3><a href="https://clearbit.com">Logos provided by Clearbit</a></h3>
+
             </Container>
         )
     }
@@ -134,6 +136,15 @@ const Container = styled.div`
   #back:hover {
       fill: ${({ theme }) => theme.font};
   }
+
+  h3 a {
+    position: absolute;
+    bottom: 1vh;
+    right: 3em;
+    text-decoration: none;
+    color: #fff;
+    z-index: 1;
+  }
   
   /* mobile */
   @media only screen and ( max-width: 440px ) and ( orientation: portrait ) {
@@ -149,6 +160,10 @@ const Container = styled.div`
 
       #back {
           transform: scale(1);
+      }
+
+      h3 a {
+          font-size: 0.6em;
       }
   }
 
@@ -197,7 +212,7 @@ const Wrapper = styled.div`
       
       & {
         flex-direction: column-reverse;
-      }
+      } 
 
       &.upper {
           flex-direction: column;

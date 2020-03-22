@@ -36,6 +36,8 @@ export default class Main extends Component {
                     </CardWr>
 
                 </Wrapper>
+
+                <h3><a href="https://clearbit.com">Logos provided by Clearbit</a></h3>
             </Container>
         )
     }
@@ -95,5 +97,22 @@ const Container = styled.div`
 
   #back:hover {
     fill: ${({ theme }) => theme.font};
+  }
+
+  h3 a {
+    position: absolute;
+    bottom: 1vh;
+    right: 3em;
+    text-decoration: none;
+    color: #fff;
+    z-index: 1;
+  }
+
+  @media only screen and ( max-screen: 464px ) {
+
+    h3 a {
+      font-size: 0.4em;
+      right: 1vh;
+    }
   }
 `
