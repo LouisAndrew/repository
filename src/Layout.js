@@ -34,17 +34,21 @@ export default class Layout extends Component {
             temp.isLoaded = true
             temp.showResult = false
             temp.results = [ ]
-            temp.sym = ' '
+            temp.sym = ''
             return temp
         })
     }
 
     setShowResult = res => {
         console.log('more than one result!')
+        if (this.context.sym) {
+            this.context.setSym('')
+        }
         this.setState(prev => {
             let temp = prev
             temp.showResult = true
             temp.results = res
+            temp.sym = ''
             return temp
         })
     }
