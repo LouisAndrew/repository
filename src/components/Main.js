@@ -2,67 +2,23 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import SymbolContext from '../SymbolContext'
 import Card from './main-cards/Card'
+import { ReactComponent as Back } from './back.svg'
 
 export default class Main extends Component { 
 
-    state = {
-      data: [
-        {
-          name: 'amazon',
-          sym: 'AMZN'
-        },
-        {
-          name: 'facebook',
-          sym: 'FB'
-        },
-        {
-          name: 'twitter',
-          sym: 'TWTR'
-        },
-        {
-          name: 'tesla',
-          sym: 'TSLA'
-        },
-        {
-          name: 'apple',
-          sym: 'AAPL'
-        },
-        {
-          name: 'starbucks',
-          sym: 'SBUX'
-        },
-        {
-          name: "microsoft",
-          sym: 'MSFT'
-        },
-        {
-          name: 'spotify',
-          sym: 'SPOT'
-        },
-        {
-          name: 'nike',
-          sym: 'NKE'
-        },
-        {
-          name: 'paypal',
-          sym: 'PYPL'
-        },
-        {
-          name: 'visa',
-          sym: 'V'
-        }
-      ]
+    backClick = () => {
+      this.props.backClick()
     }
 
     render() {
-        const ret = this.state.data.map(x => <Card {...x} />)
+        const ret = this.props.data.map(x => <Card {...x} />)
         return (
             <Container>
                 
                 <Wrapper>
-
+                    {this.props.back && <Back onClick={this.backClick} id='back' />}
                     <Note>
-                        <h3>Our Recommendations..</h3>
+                        <h3>{this.props.hero}</h3>
                     </Note>
                     <CardWr>
                       {ret}
@@ -108,11 +64,25 @@ const Container = styled.div`
   ${({ theme }) => theme.fitContainer()}
   background-color: ${({ theme }) => theme.prim};
   padding: 3em;
+  position: relative;
 
   @media only screen and ( max-screen: 850px ) {
     
     & {
       padding: 0;
     }
+  }
+
+  #back {
+    fill: #fff;
+    transform: scale(1.5);
+    position: absolute;
+    transition: 0.2s;
+    top: 2em;
+    left: 2em;
+  }
+
+  #back:hover {
+    fill: ${({ theme }) => theme.font};
   }
 `

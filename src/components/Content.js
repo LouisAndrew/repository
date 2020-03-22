@@ -128,6 +128,7 @@ const Container = styled.div`
       left: 3vh;
       fill: #fff;
       transform: scale(1.5);
+      transition: 0.2s;
   }
 
   #back:hover {

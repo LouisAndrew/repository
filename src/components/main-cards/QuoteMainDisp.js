@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function QuoteDisp(props) {
-  console.log(props)
     // const time = new Date(props.data.t * 1000)
     const up = props.data.pc < props.data.c ? true: false
     const prog = props.data.c / props.data.pc

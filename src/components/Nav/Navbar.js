@@ -22,11 +22,10 @@ export default class Navbar extends Component {
         
         if (result) {
             console.log('if result...')
-            if (result.length < 2) {
-                console.log('found!')
-                this.context.setSym(result[0])
+            if (result.length < 2 && result.length > 0) {
+                this.context.setSym(result[0].symbol)
             } else {
-                console.log(result)
+                this.props.setShowResult(result)
             }
         } else {
             //will result in error page
@@ -58,7 +57,7 @@ export default class Navbar extends Component {
   
         this.state.data.forEach(x => {
           if (x.description.toUpperCase().search(sym) !== -1 || sym === x.symbol) {
-            result = [...result, x.symbol]
+            result = [...result, x]
           } else {
             console.log('not found')
           }
@@ -72,7 +71,6 @@ export default class Navbar extends Component {
     }
 
     render() {
-        console.log(this.context)
         return (
             <Container>
                 <Logo id='logo-top' />
